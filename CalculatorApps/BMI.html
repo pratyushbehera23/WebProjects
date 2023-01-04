@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            background: #000;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 6rem auto;
+            border-radius: 10px;
+            background: #280a0a;
+            /* background-image: linear-gradient(45deg, red, maroon, dodgerblue, blue); */
+            color: #fff;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        input {
+            padding: 0.6rem;
+            width: 80%;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            padding: 0.4rem;
+            border: 1px solid #000;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            transform: translate(0, -5%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <input type="number" min="0" placeholder="Height (cm)" name="" id="height">
+        <input type="number" min="0" placeholder="Weight (kg)" name="" id="weight">
+        <button id="btn">Check</button>
+        <p id="output"></p>
+        <p id="index"></p>
+    </div>
+
+    <script>
+        const btn = document.getElementById('btn');
+        // document.querySelector('.container').style.backgroundColor = '#280a0a';
+        btn.addEventListener('click', function () {
+            const height = Number(document.getElementById('height').value) / 100;
+            const weight = Number(document.getElementById('weight').value);
+
+            const bmi = Number((weight / (height * height)).toFixed(2));
+
+            // console.log(weight, height, bmi);
+            document.getElementById('output').textContent = `${bmi} kg/m2`;
+
+            // BMI Index: UnderWeight <18.5  Normal 18.5-24.9  OverWeight 25-30  Obese <30
+            const ind = document.getElementById('index');
+            if (bmi < 18.5) {
+                ind.textContent = 'UnderWeight';
+                document.querySelector('.container').style.backgroundColor = '#001e64';
+            } else if (bmi >= 18.5 && bmi < 25) {
+                ind.textContent = 'Normal';
+                document.querySelector('.container').style.backgroundColor = '#006400';
+            } else if (bmi >= 25 && bmi < 30) {
+                ind.textContent = 'OverWeight';
+                document.querySelector('.container').style.backgroundColor = '#642600';
+            } else if (bmi >= 30) {
+                ind.textContent = 'Obese';
+                document.querySelector('.container').style.backgroundColor = '#640000';
+            }
+        })
+    </script>
+</body>
+
+</html>
