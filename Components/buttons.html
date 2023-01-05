@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .container {
+            margin: 3rem auto;
+            padding: 2rem;
+            width: 400px;
+            border: 1px dashed #000a;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        button {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .colory {
+            padding: 12px 24px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #000;
+            background: linear-gradient(red, orange);
+        }
+
+        .colory:hover {
+            background: linear-gradient(orange, red);
+        }
+
+        .colory:active {
+            background: linear-gradient(red, orange);
+        }
+
+        .simplyup {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #fff;
+            background: #000;
+        }
+
+        .simplyup:hover {
+            transform: translate(2px, -2px);
+            box-shadow: -8px 8px 12px 12px rgba(0, 0, 0, 0.05);
+            /* box-shadow: x y blur size color; */
+        }
+
+        .simplyup:active {
+            transform: translate(0, 0);
+            box-shadow: none;
+        }
+
+        .pagyboxy {
+            padding: 12px 24px;
+            border: 2px solid #000;
+            font-weight: bold;
+            color: #000;
+            background: #fff;
+        }
+
+        .pagyboxy:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 0 #000;
+        }
+
+        .pagyboxy:active {
+            transform: translate(2px, 2px);
+            box-shadow: none;
+        }
+
+        .tilty {
+            border: 2px solid rgb(150, 0, 0);
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #fff;
+            background: #f00;
+            padding: 12px 24px;
+            border: 2px solid #000;
+            font-weight: bold;
+        }
+
+        .tilty:hover {
+            transform: rotateZ(-2deg);
+            box-shadow: 0 4px 8px 8px rgba(150, 0, 0, 0.05);
+        }
+
+        .tilty:active {
+            transform: rotate(0deg);
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="colory">Click</button>
+        <button class="simplyup">Click</button>
+        <button class="pagyboxy">Click</button>
+        <button class="tilty">!</button>
+    </div>
+</body>
+
+</html>

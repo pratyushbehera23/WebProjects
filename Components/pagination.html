@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .pagination{
+            width: 600px;
+            padding: 20px;
+            margin: 40px auto;
+            box-shadow: 0 0 24px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            justify-content: center;
+        }
+        /* span{
+        } */
+        a{
+            /* cursor: pointer; */
+            /* display: inline-block; */
+            text-decoration: none;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            color: #04632f;
+            border: 2px solid #04632f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        a:hover{
+            background: #04632f;
+            color: #fff;
+        }
+        /* Active */
+        .active{
+            background: #04632f;
+            color: #fff;
+        }
+        /* Arrow */
+        .arrow{
+            /* position: absolute; */
+            width: 50px;
+            background: #fff;
+            stroke: #04632f;
+            padding: 10px;
+            border: 2px solid #04632f;
+            border-radius: 50%;
+            box-shadow: 0 0 36px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        .arr1{
+            left: 0;
+            transform: translate(-50%, 0);
+        }
+        .arr2{
+            right: 0;
+            transform: translate(50%, 0);
+        }
+        .arrow:hover{
+            background: #04632f;
+            stroke: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="pagination">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="arrow arr1"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="" class="active">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <span>...</span>
+        <a href="">23</a>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="arrow arr2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+    </div>
+</body>
+</html>
