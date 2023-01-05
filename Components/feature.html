@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        h1{
+            padding-top: 20px;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 2rem;
+            /* color: red;
+            text-shadow: 2px 2px 5px orangered; */
+            color: #000a;
+            text-shadow: 2px 2px 36px #000;
+        }
+        .featureBox{
+            width: 100vw;
+            /* margin: 40px auto; */
+            padding: 40px;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .feature{
+            width: 300px;
+            /* padding: 20px; */
+            box-shadow: 0 0 24px 24px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+        }
+        img{
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+        }
+        .info{
+            padding: 20px;
+        }
+        h2{
+            margin-bottom: 24px;
+        }
+        p{
+            line-height: 1.5;
+            color: #000a;
+        }
+        button{
+            border: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            padding: 12px 24px;
+            color: #fff;
+            background: #000;
+        }
+        button:hover{
+            cursor: pointer;
+            box-shadow: 0 0 24px 24px rgba(0, 0, 0, 0.05);
+            transform: translate(2px, -2px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav></nav>
+    </header>
+    <main>
+        <section>
+            <h1>Steps</h1>
+            <div class="featureBox">
+                <div class="feature">
+                    <img src="../../images/sqimg/thumb-card8.png" alt="">
+                    <div class="info">
+                        <h2>Ready your bag</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                        <button>Ready</button>
+                    </div>
+                </div>
+                <div class="feature">
+                    <img src="../../images/sqimg/thumb-card6.png" alt="">
+                    <div class="info">
+                        <h2>Let's Tour</h2>
+                        <p>Loolestiae blanditiis hic atque nesciunt in alias.</p>
+                        <button>Check</button>
+                    </div>
+                </div>
+                <div class="feature">
+                    <img src="../../images/sqimg/thumb-card7.png" alt="">
+                    <div class="info">
+                        <h2>The wonder way</h2>
+                        <p>Lorem ipsum dolor sit, amrspiciatis quae repellat molestiae blanditiiss.</p>
+                        <button>Go!</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .carousel{
+            width: 800px;
+            margin: 80px auto;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            display: flex;
+            gap: 24px;
+            padding: 36px 48px 36px 108px;
+            border-radius: 8px;
+            background: rgb(4, 78, 46);
+            color: #fff;
+            position: relative;
+            align-items: center;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            box-shadow: 0 0 24px 24px rgba(0, 0, 0, 0.2);
+            transform: scale(1.6);
+        }
+        blockquote{
+            margin-left: 84px;
+        }
+        .author-text{
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 36px;
+        }
+        .author{
+            font-size: 16px;
+            color: #fff9;
+            margin-bottom: 8px;
+        }
+        .author-job{
+            font-size: 14px;
+            color: #fffa;
+        }
+        /*  */
+        .arrow{
+            position: absolute;
+            width: 50px;
+            background: #fff;
+            stroke: #000;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 0 24px 24px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        .arr1{
+            left: 0;
+            transform: translate(-50%, 0);
+        }
+        .arr2{
+            right: 0;
+            transform: translate(50%, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <img src="../../gems.jpg" alt="">
+        <blockquote>
+            <p class="author-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate earum, dolores, repellendus debitis autem atque eaque obcaecati aperiam labore necessitatibus dicta.</p>
+            <p class="author">Pratyush</p>
+            <p class="author-job">Web developer, DigiP In</p>
+        </blockquote>
+        <!-- arrows -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="arrow arr1"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="arrow arr2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+    </div>
+</body>
+</html>
