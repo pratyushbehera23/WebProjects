@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: sans-serif;
+    background: #140202;
+}
+
+.btn {
+    background: #fff;
+    color: #140202;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-5%);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Hide arrows from input type:number */
+
+::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* input[type=number] {
+    -moz-appearance: textfield;
+} */
+
+/* ----------------------------------- */
+
+.guessNumberGame {
+    padding: 2rem;
+    color: #fff;
+    max-width: 120rem;
+    margin: 4rem auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+}
+
+.header>* {
+    display: flex;
+    align-items: center;
+}
+
+/* .header button {
+    padding: 0.8rem 1.6rem;
+    font-size: 2.4rem;
+} */
+
+.header .navSide {
+    font-size: 1.8rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 6rem;
+}
+
+.numLine {
+    height: 2px;
+    background: #fff;
+    text-align: center;
+}
+
+.cen {
+    text-align: center;
+}
+
+.number {
+    display: inline-block;
+    padding: 2rem 3rem;
+    font-size: 4rem;
+    font-weight: bolder;
+    background: #fff;
+    color: #140202;
+    transform: translateY(-50%);
+    margin: 0 auto;
+}
+
+
+.down {
+    display: flex;
+    justify-content: space-around;
+}
+
+.allInput {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.allInput input {
+    padding: 2rem 4rem;
+    font-size: 3rem;
+    text-align: center;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.allInput button {
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    background: #fff;
+    color: #140202;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.allInfo {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 15rem;
+}
+
+.allInfo>* {
+    padding: 0.5rem 0;
+}
