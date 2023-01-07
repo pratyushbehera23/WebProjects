@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            min-width: 100%;
+            /* background: #0002; */
+        }
+        .box{
+            height: 200px;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background: #0001; */
+            position: relative;
+        }
+        .circle{
+            height: 200px;
+            width: 200px;
+            border: 40px solid #000;
+            border-radius: 50%;
+            position: relative;
+            /* transform: translateY(20px); */
+        }
+        .ball{
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background: #fff;
+            position: absolute;
+            left: 0;
+            /* top: 50%; */
+            /* transform: translateY(-50%); */
+            transform-origin: 100px;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation: ballRotate 4s infinite;
+        }
+        @keyframes ballRotate{
+            0%{
+                /* left: 0; */
+                transform: rotate(0deg);
+            }
+            /* 50%{
+                right: 0;
+            } */
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="circle"></div>
+        <div class="ball"></div>
+    </div>
+</body>
+</html>
