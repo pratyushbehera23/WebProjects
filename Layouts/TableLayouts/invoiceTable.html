@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            text-align: center;
+        }
+        table{
+            width: 600px;
+            margin: 20px auto;
+        }
+        table, th, td{
+            border: 1px solid #000;
+            border-collapse: collapse;
+            padding: 10px;
+            line-height: 1.5;
+        }
+        th{
+            background: skyblue;
+            text-align: left;
+        }
+        .imp{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Invoice</h1>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">Invoice #123ABC</th>
+                <th>23 Nov 2022</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <div>
+                        <h3>Pay to:</h3>
+                        <p>TechPark <br> Xyz Road <br> Bangalore 76820</p>
+                    </div>
+                </td>
+                <td colspan="2">
+                    <div>
+                        <h3>Customer:</h3>
+                        <p>George Carlin <br> Dummy Flat <br> Relegore 76820</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Name/Description</th>
+                <th>Qty.</th>
+                <th>MRP</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td>Biryani</td>
+                <td>3</td>
+                <td>400</td>
+                <td>1200</td>
+            </tr>
+            <tr>
+                <td>ChocoShake</td>
+                <td>3</td>
+                <td>200</td>
+                <td>600</td>
+            </tr>
+            <tr>
+                <th colspan="3">Subtotal:</th>
+                <td>1800</td>
+            </tr>
+            <tr>
+                <th colspan="2">Discount:</th>
+                <td>10%</td>
+                <td>180</td>
+            </tr>
+            <tr>
+                <th colspan="3">Grand Total:</th>
+                <td class="imp">Rs 1620</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

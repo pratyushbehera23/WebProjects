@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site with table</title>
+    <style>
+        *{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body style="text-align: center; margin: 0; padding: 0; font-family: monospace;">
+    <h1>Hello World</h1>
+    <table style="margin: auto; padding: 10px;" border="5">
+        <thead>
+            <tr>
+                <!-- <th><a href="#">Home</a></th> -->
+                <th><a href="#about">About</a></th>
+                <th><a href="#gallery">Gallery</a></th>
+                <th><a href="#contact">Contact</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="about">
+                <td colspan="2">
+                    <h2>About me</h2>
+                    <p>Hello, my name is Pratyush and I'm a web developer.</p>
+                </td>
+                <td>
+                    <img src="./img/eve.jpg" alt="" width="100" height="100" style="border-radius: 50%;">
+                </td>
+                <td rowspan="3"></td>
+            </tr>
+
+            <tr id="gallery">
+                <td>
+                    <div>
+                        <img src="./img/blkstone.jpg" alt="" width="200">
+                        <p>Crystal</p>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <img src="./img/dawn.jpg" alt="" width="200">
+                        <p>Dawn</p>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <img src="./img/eve.jpg" alt="" width="200">
+                        <p>Eve</p>
+                    </div>
+                </td>
+            </tr>
+
+            <tr id="contact">
+                <td></td>
+                <td colspan="2">
+                    <input type="text" name="" id="" placeholder="xyz">
+                    <input type="submit" value=">">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3">&copy; Pratyush</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
