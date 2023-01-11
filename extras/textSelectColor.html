@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>color selected text</title>
+	<style>
+		body{
+			font-family: sans-serif;
+		}
+
+		.box{
+			width: 400px;
+			padding: 2rem;
+			margin: 2rem auto;
+			box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+			border-radius: 10px;
+		}
+
+		
+		/* Changing text & bg color of selected text */
+		/* All */
+		::selection {
+		color: #fff;
+		background: #333;
+		}
+        ::-moz-selection {
+        color: #fff;
+        background: #333;
+        }
+		/* Particular */
+		h1::selection {
+			color: cyan;
+			background: pink;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h1>Hello</h1>
+		<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum nostrum consequuntur, error in ipsa possimus, sed minus mollitia sit, fugit reiciendis enim debitis!</p>
+	</div>
+</body>
+</html>
