@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: sans-serif;
+            /* background: #000; */
+            background-image: linear-gradient(65deg, #02271d, #180332);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30vh;
+            min-height: 100vh;
+        }
+        button{
+            padding: 0.5rem 0.8rem;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+        #txt{
+            font-size: 2rem;
+            animation: rotateTxt 2s infinite;
+        }
+        @keyframes rotateTxt {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <p id="txt">Hello World!</p>
+    <div class="btns">
+        <button id="lft">Left</button>
+        <button id="cen">Center</button>
+        <button id="rig">Right</button>
+    </div>
+
+    <script>
+        const txt = document.getElementById('txt');
+        // Btn
+        const btnCen = document.getElementById('cen');
+        const btnLft = document.getElementById('lft');
+        const btnRig = document.getElementById('rig');
+        // Do
+        btnCen.addEventListener('click', ()=>{
+            txt.style.transformOrigin = 'center';
+        })
+        btnLft.addEventListener('click', ()=>{
+            txt.style.transformOrigin = 'left';
+        })
+        btnRig.addEventListener('click', ()=>{
+            txt.style.transformOrigin = 'right';
+        })
+    </script>
+</body>
+</html>

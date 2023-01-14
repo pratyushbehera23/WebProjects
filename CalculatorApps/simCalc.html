@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple calc</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            gap: 1rem;
+        }
+        input{
+            padding: 0.5rem;
+            max-width: 4rem;
+        }
+        select{
+            padding: 0.5rem 0.8rem;
+        }
+        button{
+            padding: 0.5rem 0.8rem;
+        }
+        span{
+            display: inline-block;
+            padding: 0.5rem 0.8rem;
+            border: 1px dotted #000a;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" name="" id="num1">
+    <select name="" id="symbols">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" name="" id="num2">
+    <button id="btn">=</button>
+    <!-- <input type="number" name="" id="answer"> -->
+    <span id="answer">--</span>
+
+    <script>
+        const num1 = document.getElementById('num1');
+        const num2 = document.getElementById('num2');
+        const sym = document.getElementById('symbols');
+        const btn = document.getElementById('btn');
+        const ans = document.getElementById('answer');
+        // 
+        btn.addEventListener('click', ()=>{
+
+            // num1 sym num2 = ans
+            switch (sym.value) {
+                case '+':
+                    ans.textContent = Number(num1.value) + Number(num2.value);
+                    break;
+                case '-':
+                    ans.textContent = Number(num1.value) - Number(num2.value);
+                    break;
+                case '*':
+                    ans.textContent = Number(num1.value) * Number(num2.value);
+                    break;
+                case '/':
+                    ans.textContent = Number(num1.value) / Number(num2.value);
+                    break;
+                // default:
+                    // err;
+            }
+        })
+    </script>
+</body>
+</html>
