@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiggle load</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #000;
+        }
+        .box{
+            transform: rotate(45deg);
+        }
+        .load{
+            height: 4rem;
+            width: 4rem;
+            border-radius: 5px;
+            background-image: linear-gradient(red, purple);
+            animation: jiggle 1s infinite;
+        }
+        @keyframes jiggle{
+            0%, 50%, 100%{
+                transform: skew(0deg);
+            }
+            25%{
+                transform: skew(30deg);
+            }
+            75%{
+                transform: skew(-30deg);
+            }
+        }
+        h2{
+            color: #fff;
+            transform: translate(-20%, 100%) rotate(-45deg);
+        }
+        h3{
+            color: #fff;
+            /* transform: translate(-75%, 0%); */
+            /* transform: translate(10%, 0); */
+            position: absolute;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="load">
+            <h2>Loading...</h2>
+        </div>
+    </div>
+    <!-- <h3>Loading...</h3> -->
+</body>
+</html>

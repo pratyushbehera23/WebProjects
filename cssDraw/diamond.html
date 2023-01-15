@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .boxes{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            transform: rotate(45deg);
+        }
+        .box .red{
+            border-top: solid 2rem #f00;
+            border-bottom: solid 2rem #9a0e44;
+            border-left: solid 2rem #f71414;
+            border-right: solid 2rem #6e1604;
+        }
+        .box .blue{
+            border-top: solid 2rem #002ee5;
+            border-bottom: solid 2rem #0e219a;
+            border-left: solid 2rem #1449f7;
+            border-right: solid 2rem #063194;
+        }
+        .box .green{
+            border-top: solid 2rem #00e52e;
+            border-bottom: solid 2rem #0e9a5d;
+            border-left: solid 2rem #14f76b;
+            border-right: solid 2rem #069431;
+        }
+        .box{
+            border-top: solid 2rem #f00;
+            border-bottom: solid 2rem #0f0;
+            border-left: solid 2rem #00f;
+            border-right: solid 2rem #ff0;
+        }
+        .b1{
+            border-top: solid 2rem #000;
+            border-left: solid 2rem #000;
+        }
+        .boxes:hover{
+            opacity: 50%;
+            box-shadow: 12px 12px 12px #0ff;
+        }
+        button{
+            position: absolute;
+            bottom: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxes">
+        <div class="box b1"></div>
+        <div class="box b2"></div>
+        <div class="box b3"></div>
+        <div class="box b4"></div>
+    </div>
+    <button id="btn">Change</button>
+
+    <script>
+        const box = document.querySelectorAll('.box');
+        const boxes = document.querySelector('.boxes');
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', ()=>{
+            boxes.classList.add('red');
+        })
+    </script>
+</body>
+</html>
