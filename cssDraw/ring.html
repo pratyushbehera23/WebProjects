@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ring</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container{
+            position: relative;
+        }
+        .diamond{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            transform: rotate(45deg) translate(-20%, -75%);
+            position: absolute;
+            /* top: -3rem; */
+        }
+        .box{
+            height: 2rem;
+            width: 2rem;
+            border-top: 1rem solid rgb(3, 184, 184);
+            border-left: 1rem solid rgb(23, 249, 249);
+            border-right: 1rem solid rgb(6, 124, 124);
+            border-bottom: 1rem solid rgb(28, 199, 199);
+        }
+        .b1{
+            border-top: 1rem solid #000;
+            border-left: 1rem solid #000;
+        }
+        .ring{
+            height: 7rem;
+            width: 7rem;
+            border-radius: 50%;
+            border: 1rem solid #ffdd00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="diamond">
+            <div class="box b1"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="ring"></div>
+    </div>
+</body>
+</html>

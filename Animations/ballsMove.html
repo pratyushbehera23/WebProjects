@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ballBx</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            /* background: #5fc500a8; */
+            background: #000;
+        }
+        .container{
+            display: inline-block;
+            min-width: 10rem;
+            min-height: 10rem;
+            position: relative;
+            border-radius: 2.5rem;
+            /* background: #000; */
+            /* outline: 1rem solid #005d4d; */
+            /* border: 1rem solid #005d4d; */
+        }
+        .circle{
+            position: absolute;
+            /* top: 0;
+            left: 0; */
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+            background: #005d4d;
+        }
+        .c1{
+            top: 0;
+            left: 0;
+            background: #f00;
+            animation: move 4s infinite;
+        }
+        .c2{
+            top: 2rem;
+            left: 2rem;
+            background: #0ff;
+            animation: move2 4s infinite;
+        }
+        .c3{
+            top: 0;
+            left: 2rem;
+            background: #f0f;
+            animation: move3 4s infinite;
+        }
+        .c4{
+            top: 2rem;
+            left: 0;
+            background: #ff0;
+            animation: move4 4s infinite;
+        }
+        @keyframes move{
+            0%, 100%{
+                top: 0;
+                left: 0;
+            }
+            25%{
+                top: 0;
+                left: 5rem;
+            }
+            50%{
+                top: 5rem;
+                left: 5rem;
+            }
+            75%{
+                top: 5rem;
+                left: 0;
+            }
+        }
+        @keyframes move2{
+            0%, 100%{
+                top: 5rem;
+                left: 5rem;
+            }
+            25%{
+                top: 5rem;
+                left: 0;
+            }
+            50%{
+                top: 0;
+                left: 0;
+            }
+            75%{
+                top: 0;
+                left: 5rem;
+            }
+        }
+        @keyframes move3{
+            0%, 100%{
+                top: 0;
+                left: 5rem;
+            }
+            25%{
+                top: 5rem;
+                left: 5rem;
+            }
+            50%{
+                top: 5rem;
+                left: 0;
+            }
+            75%{
+                top: 0;
+                left: 0;
+            }
+        }
+        @keyframes move4{
+            0%, 100%{
+                top: 5rem;
+                left: 0;
+            }
+            25%{
+                top: 0;
+                left: 0;
+            }
+            50%{
+                top: 0;
+                left: 5rem;
+            }
+            75%{
+                top: 5rem;
+                left: 5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+        <div class="circle c3"></div>
+        <div class="circle c4"></div>
+    </div>
+</body>
+</html>
