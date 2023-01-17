@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            min-height: 100vh;
+        }
+        #shape{
+            background: #0f0;
+            height: 10rem;
+            width: 10rem;
+        }
+        #btn{
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="shape"></div>
+    <button id="btn">Change</button>
+
+    <script>
+        const shape = document.getElementById('shape');
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', ()=>{
+            const ltr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
+            let hex = '#'
+            for(let i=1; i<=6; i++){
+                const rLtr = Math.trunc(Math.random() * ltr.length);
+                hex += ltr[rLtr];
+            }
+            shape.style.background = hex;
+            const rNo = Math.trunc(Math.random() * 5) + 1;
+            // console.log(rNo);
+            switch(rNo){
+                case 1:
+                    console.log('a');
+                    // shape.style.borderRadius = '50%';
+                    shape.style.transform = 'rotate(45deg)';
+                    break;
+                case 2:
+                    console.log('b');
+                    shape.style.transform = 'skew(45deg)';
+                    break;
+                case 3:
+                    console.log('c');
+                    shape.style.transform = 'translate(50%, -50%)';
+                    break;
+                case 4:
+                    console.log('d');
+                    shape.style.transform = 'scale(120%)';
+                    break;
+                case 5:
+                    console.log('e');
+                    shape.style.transform = 'scale(80%)';
+                    break;
+                default:
+                    console.log('something went wrong!');
+            }
+        })
+    </script>
+</body>
+</html>
