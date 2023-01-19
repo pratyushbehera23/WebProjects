@@ -6,6 +6,8 @@ Layouts
 
 extras
 
+DOM
+
 Calculator Apps
 Color Apps
 

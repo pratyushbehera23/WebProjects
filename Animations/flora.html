@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flora</title>
+    <style>
+        :root{
+            --g1: #006400;
+            --g2: #009600;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        button{
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            animation: flower 2s infinite;
+            border-radius: 50%;
+            box-shadow: 0 0 120px rgba(0, 255, 0, 0.4);
+            transition: all 0.6s;
+        }
+        .container:hover{
+            box-shadow: none;
+        }
+        .curve{
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+            border: 1rem solid green;
+            animation: flow 2s infinite;
+        }
+        .c1{
+            border-top-left-radius: 0%;
+            border-bottom-right-radius: 0%;
+            border-right: 1rem solid var(--g1);
+            border-left: 1rem solid var(--g2);
+        }
+        .c2{
+            border-top-right-radius: 0%;
+            border-bottom-left-radius: 0%;
+            border-bottom: 1rem solid var(--g1);
+            border-top: 1rem solid var(--g2);
+        }
+        .c3{
+            border-bottom-left-radius: 0%;
+            border-top-right-radius: 0%;
+            border-top: 1rem solid var(--g1);
+            border-bottom: 1rem solid var(--g2);
+        }
+        .c4{
+            border-bottom-right-radius: 0%;
+            border-top-left-radius: 0%;
+            border-left: 1rem solid var(--g1);
+            border-right: 1rem solid var(--g2);
+        }
+        @keyframes flow{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes flower{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="curve c1"></div>
+        <div class="curve c2"></div>
+        <div class="curve c3"></div>
+        <div class="curve c4"></div>
+    </div>
+    <!-- <button id="btn">Wow</button> -->
+    <!-- <script>
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', ()=>{
+            for(let i=1; i<=4; i++){
+                let angle = 'rotate(45deg)' ? 'rotate(45deg)' : 'rotate(0deg)' ;
+                document.querySelector(`.c${i}`).style.transform = angle;
+            }
+        })
+    </script> -->
+</body>
+</html>
