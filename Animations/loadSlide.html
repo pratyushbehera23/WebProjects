@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>load slide</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background: rgb(120, 170, 255); */
+        }
+        .loadBox{
+            background: #0001;
+            width: 300px;
+            height: 10px;
+            border-radius: 50px;
+        }
+        .load{
+            background: #000;
+            width: 20px;
+            height: 10px;
+            border-radius: 50px;
+            animation: slide 2s infinite;
+        }
+        @keyframes slide{
+            0%, 100%{
+                transform: translateX(0);
+            }
+            50%{
+                transform: translateX(280px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loadBox">
+        <div class="load"></div>
+    </div>
+</body>
+</html>
