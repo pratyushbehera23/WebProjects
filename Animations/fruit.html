@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            width: 400px;
+            /* margin: 5rem auto; */
+            padding: 1rem;
+            position: relative;
+        }
+        .leaf{
+            background: rgb(0, 139, 0);
+            height: 80px;
+            width: 60px;
+            border: 4px solid rgb(0, 65, 0);
+            position: absolute;
+            left: 50%;
+            top: -60px;
+        }
+        .l1{
+            border-top-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            transform-origin: left;
+            animation: swift 1.8s infinite;
+        }
+        .l2{
+            border-top-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+            left: 38%;
+            transform-origin: right;
+            animation: swift 2.5s infinite;
+        }
+        /* .stem{
+            height: 50px;
+            width: 5px;
+            background: rgb(45, 15, 15);
+            transform: skew(5deg);
+            margin: 0 auto;
+        } */
+        .fruit{
+            background: rgb(219, 106, 0);
+            height: 120px;
+            width: 120px;
+            border: 4px solid rgb(65, 33, 0);
+            border-radius: 44%;
+            margin: 0 auto;
+            animation: jiggle 3s infinite;
+        }
+        @keyframes swift{
+            0%, 100%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(10deg);
+            }
+        }
+        @keyframes jiggle{
+            0%, 100%{
+                transform: skew(2deg);
+            }
+            50%{
+                transform: skew(-3deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="leaf l1"></div>
+        <div class="leaf l2"></div>
+        <!-- <div class="stem"></div> -->
+        <div class="fruit"></div>
+    </div>
+</body>
+</html>
