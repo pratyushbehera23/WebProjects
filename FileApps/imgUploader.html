@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Img upload</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container{
+            box-shadow: 0 0 12px #0001;
+            border-radius: 5px;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+        #preview-img{
+            height: 200px;
+            width: 300px;
+            border: 1px dashed #000a;
+            background-size: cover;
+        }
+        #choose-img{
+            transform: translateX(14%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="preview-img"></div>
+        <input type="file" name="" id="choose-img" accept="image/png, image/jpg">
+    </div>
+
+    <script>
+        const choose = document.getElementById('choose-img');
+        const preview = document.getElementById('preview-img');
+        let uploadedimg = '';
+        choose.addEventListener('change', function(){
+            const reader = new FileReader();
+            reader.addEventListener('load', ()=>{
+                uploadedimg = reader.result;
+                preview.style.backgroundImage = `url(${uploadedimg})`;
+            })
+            reader.readAsDataURL(this.files[0]);
+        })
+    </script>
+</body>
+</html>

@@ -10,5 +10,6 @@ DOM
 
 Calculator Apps
 Color Apps
+File Apps
 
 Web Games
