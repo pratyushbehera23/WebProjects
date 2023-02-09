@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false">
+<!-- ^ as above the whole page can't be right clicked -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some styles</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: green;
+        }
+        .pg{
+            background: yellow;
+            color: green;
+            height: 120vh;
+            margin: 100px;
+            padding: 100px;
+        }
+        /* Scroll-bar */
+        ::-webkit-scrollbar{
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track{
+            background: #333;
+        }
+        ::-webkit-scrollbar-thumb{
+            background: red;
+            border-radius: 10px;
+        }
+        /* Text-selection-color */
+        ::-moz-selection { /* for Firefox */
+        color: yellow;
+        background: green;
+        }
+        ::selection {
+        color: yellow;
+        background: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="pg">The stuff inside html/body tag makes this page unclickable on right-click... Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas modi adipisci id reiciendis velit debitis omnis ut corrupti placeat consequuntur expedita, illum quaerat neque architecto totam aut ad maxime pariatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, alias nisi. Eos labore, earum animi nihil laborum nisi optio, aliquam dicta voluptatem nulla numquam harum recusandae alias explicabo accusantium eius!</div>
+</body>
+</html>
