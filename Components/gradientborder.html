@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            font-family: sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+        a{
+            color: #00c4c4;
+        }
+        .card{
+            position: relative;
+            background: #000;
+            color: #fff;
+            border-radius: 8px;
+            width: 25rem;
+            height: 24rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .card::before{
+            content: '';
+            position: absolute;
+            width: calc(100% + 1.5rem);
+            height: calc(100% + 1.5rem);
+            /* top: 0;
+            left: 0; */
+            /* transform: translate(-5px, -5px); */
+            background: linear-gradient(60deg, #5ff281, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f) 0, 50%;
+            background-size: 300%, 300%;
+            border-radius: 10px;
+            z-index: -1;
+            animation: gradient 3.5s alternate infinite;
+        }
+        @keyframes gradient{
+            50%{
+                background-position: 100% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Premium</h2>
+        <p>$99/month</p>
+        <a href="#">Get started</a>
+    </div>
+</body>
+</html>
