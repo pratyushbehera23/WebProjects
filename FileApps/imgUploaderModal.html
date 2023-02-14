@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Img upload</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: inherit;
+        }
+        html{
+            font-size: 62.5%;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        button{
+            background: #000;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+        .container{
+            /* box-shadow: 0 0 12px #0001; */
+            border-radius: 5px;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+        #preview-img{
+            height: 200px;
+            width: 300px;
+            border: 1px dashed #000a;
+            background-size: cover;
+        }
+        #choose-img{
+            transform: translateX(14%);
+        }
+
+        /* Modal bg */
+        #myModal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: #0006;
+        }
+        .modal-content {
+            background-color: #fff;
+            border-radius: 10px;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 460px;
+            position: relative;
+        }
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 2.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .close:hover{
+            color: #000a;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="myBtn">Add image</button>
+
+    <!-- The Modal -->
+    <div id="myModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- IMG UPLOAD CODE: -->
+            <div class="container">
+                <!-- <img src="" alt="" id="preview-img"> -->
+                <div id="preview-img"></div>
+                <input type="file" name="" id="choose-img" accept="image/png, image/jpg">
+                <button id="upload-btn">Upload</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const choose = document.getElementById('choose-img');
+        const preview = document.getElementById('preview-img');
+        let uploadedimg = '';
+        // 
+        choose.addEventListener('change', function(){
+            const reader = new FileReader();
+            reader.addEventListener('load', ()=>{
+                uploadedimg = reader.result;
+                preview.style.backgroundImage = `url(${uploadedimg})`;
+            })
+            reader.readAsDataURL(this.files[0]);
+        })
+
+        // ------------- Modal
+        const modal = document.getElementById("myModal");
+        const btn = document.getElementById("myBtn");
+        const closebtn = document.getElementsByClassName("close")[0];
+        
+        // click the button, open the modal 
+        // btn.onclick = function() {
+        //     modal.style.display = "block";
+        // }
+        btn.addEventListener('click', ()=>{
+            modal.style.display = "block";
+        })
+
+        // click on <span> (x), close the modal
+        // closebtn.onclick = function() {
+        //     modal.style.display = "none";
+        // }
+        closebtn.addEventListener('click', ()=>{
+            modal.style.display = "none";
+        })
+
+        // click anywhere outside of the modal, close it
+        // window.onclick = function(event) {
+        //     if (event.target == modal) {
+        //         modal.style.display = "none";
+        //     }
+        // }
+        window.addEventListener('click', (e)=>{
+            if(e.target == modal) {
+                modal.style.display = "none";
+            }
+        })
+    </script>
+</body>
+</html>
