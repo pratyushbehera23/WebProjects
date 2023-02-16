@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="shortcut icon" href="ashoka-chakra.jpg" type="image/x-icon">
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+        } */
+        main{
+            display: flex;
+            justify-content: center;
+        }
+        .post{
+            border: 10px solid gray;
+            margin: 25px;
+            padding: 15px;
+            width: 800px;
+        }
+        .date{
+            color: dodgerblue;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 10px;
+        }
+        h2{
+            margin: 10px;
+        }
+        .quote{
+            border-left: 5px solid lightslategrey;
+            padding: 5px;
+        }
+        .scene{
+            width: 780px;
+            height: 350px;
+            padding: 10px;
+        }
+
+        @media only screen and (max-width:1199px){
+            .post{
+                border: 10px solid gray;
+                margin: 20px;
+                padding: 15px;
+                width: 800px;
+            }
+        }
+        @media only screen and (max-width:999px){
+            .scene{
+                width: 720px;
+                height: 380px;
+            }
+            .post{
+                border: none;
+            }
+        }
+        @media only screen and (max-width:768px){
+            .scene{
+                width: 520px;
+                height: 280px;
+            }
+            .post{
+                border: none;
+            }
+        }
+        @media only screen and (max-width:600px){
+            .scene{
+                width: 320px;
+                height: 185px;
+            }
+            .post{
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="post">
+            <div class="date">November 23rd, 2021</div>
+            <h2>Dreamland: My favourite Place</h2>
+            <p class="quote">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit quo vero numquam sed, eaque fugiat iure tempora, sequi esse facere et aspernatur dolore! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet voluptates nobis accusamus quam temporibus, deserunt error fugit vitae quia! Aut porro, ea sapiente nam illo iste laboriosam eos repellendus reprehenderit?</p>
+            <a href="#">
+                <img src="./img2.jpg" alt="" class="scene">
+            </a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, possimus porro dolorum voluptate inventore accusamus aliquam commodi excepturi deleniti consequuntur ducimus corrupti vel odit laborum ea. Facilis recusandae soluta tempore.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eius omnis ullam repellendus saepe mollitia repellat tenetur modi culpa accusantium amet, illo id rerum commodi maiores rem ducimus dignissimos voluptate.
+            </p>
+            <br>
+            <hr>
+            <div class="date">November 24th, 2021</div>
+            <h2>A Travel to the Heaven</h2>
+            <p class="quote">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit quo vero numquam sed, eaque fugiat iure tempora, sequi esse facere et aspernatur dolore! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet voluptates nobis accusamus quam temporibus, deserunt error fugit vitae quia! Aut porro, ea sapiente nam illo iste laboriosam eos repellendus reprehenderit?</p>
+            <a href="#">
+                <img src="./img3.jpg" alt="" class="scene">
+            </a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, possimus porro dolorum voluptate inventore accusamus aliquam commodi excepturi deleniti consequuntur ducimus corrupti vel odit laborum ea. Facilis recusandae soluta tempore.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eius omnis ullam repellendus saepe mollitia repellat tenetur modi culpa accusantium amet, illo id rerum commodi maiores rem ducimus dignissimos voluptate.
+            </p>
+        </div>
+    </main>
+</body>
+</html>
