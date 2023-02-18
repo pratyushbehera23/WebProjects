@@ -1,0 +1,173 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulating DOM</title>
+    <style>
+        #btn{
+            padding: 8px;
+            border: 2px solid #000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main">
+        <ul id="nav">
+            <li>Home</li>
+            <li>About</li>
+            <li>Projects</li>
+            <li>Contact</li>
+        </ul>
+        <h1 id="heading">Hello there</h1>
+        <div class="child red" id="first">Child-1</div>
+        <div class="child">Child-2</div>
+        <div class="child">Child-3</div>
+        <div class="child">Child-4</div>
+        <form action="none.html" method="post">
+            <a href="example.com">GoToExample</a>
+            Search: <input type="text" name="Hello" id="">
+            <input type="button" value="submit">
+        </form>
+    </div>
+    <div class="container">
+        <h2>2nd Container</h2>
+        <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum odit, quae hic eos vel in quo ratione. Sint eligendi asperiores nam perferendis eveniet soluta atque ducimus recusandae beatae, neque corporis!</p>
+        <button id="btn" onclick="toggleHide()">Show/Hide</button>
+        <p>Time now is : <span id='time'></span></p>
+    </div>
+
+    <!-- <script src="dom.js"></script> -->
+    <script>
+        // 
+        console.log('Learning DOM');
+
+        // let doc = document;
+
+        // doc = document.all;
+        // doc = document.body;
+        // doc = document.forms[0];
+        // Array.from(doc).forEach(function(element){
+        //     console.log(element);
+        // })
+        // doc = document.links[0];
+        // use document.images & document.scripts > print the list of images & scripts on the html page
+
+        // console.log(doc);
+
+
+        // ------
+
+        // getElementById - 
+
+        let main = document.getElementById('main');
+        console.log(main);
+
+        let nav = document.getElementById('nav');
+        // let nav = document.getElementById('nav>li');
+        console.log(nav);
+        nav.innerHTML = "<li>DynamicElement</li>"
+
+        // getElementsByClassName - 
+
+        let containers = document.getElementsByClassName('container');
+        console.log(containers);
+
+        // querySelector - 
+
+        // let sel = document.querySelector('.container');
+        // let sel = document.querySelector('#nav');
+        // let sel = document.querySelector('#nav>li');
+        let sel = document.querySelectorAll('.container');
+        console.log("Selector returns", sel);
+
+
+        /* Events and Listening 
+        Browser events: (on)
+            click
+            contextmenu
+            mouseover/mouseout
+            mousedown/mouseup
+            mousemove
+            submit
+            focus
+            DOMContentLoaded
+            transitionend
+        */
+        let para = document.getElementById('para');
+        para.addEventListener('mouseover', function run(){
+            console.log('Mouse inside');
+        })
+        para.addEventListener('mouseout', function run(){
+            console.log('Mouse now went outside');
+        })
+
+        function toggleHide(){
+            let btn = document.getElementById('btn');
+            let para = document.getElementById('para');
+            if(para.style.display != 'none'){
+                para.style.display = 'none';
+            } else{
+                para.style.display = 'block';
+            }
+        }
+
+
+        // setTimeOut & clearTimeOut
+
+        // setTimeout -> allows to run the function once after the interval of time
+        // clearTimeout -> allows to run the function repeatedly after the interval of time
+
+        function greet(){
+            console.log("Hello Good Morning");
+        }
+        setTimeout(greet, 5000);
+
+        // let's display time
+        function displayTime(){
+            let time = new Date();
+            // console.log(time);
+            document.getElementById('time').innerHTML = time;
+        }
+        setInterval(displayTime, 1000);
+
+        // Date & Time
+
+        // current time
+        let now = new Date();
+        console.log(now);
+        // the beginning reference time from which it's counting
+        let dt = new Date(0);
+        console.log(dt);
+        // 5second + the beginning reference time from which it's counting
+        let dt5 = new Date(5000);
+        console.log(dt5);
+        // 
+        let newDate = new Date("2022-11-23");
+        console.log(newDate);
+        // let newDate = new Date(year, month, date, hours, minutes, seconds, milliseconds);
+        let theDate = new Date(2023, 11, 23, 6, 5, 2, 30);
+        console.log(theDate);
+        // 
+        let year = newDate.getFullYear()
+        console.log("The year is:", year);
+        //  
+        let month = newDate.getMonth()
+        console.log("The month is:", month);
+        //  
+        let date = newDate.getDate()
+        console.log("The date is:", date);
+        //  
+        let hours = newDate.getHours()
+        console.log("The hour is:", hours);
+        // change date setDate (similar setMonth, setHour, ...)
+        newDate.setDate(5);
+        console.log(newDate);
+        // current time stamp -> time gone in millisecond from the beginning reference time i.e. Jan 01 1970 05:30:00
+        let gone = Date.now()
+        console.log(gone);
+    </script>
+</body>
+</html>
