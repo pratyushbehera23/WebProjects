@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: #1b6cfb;
+            text-shadow: 2px 2px #adceff;
+        }
+        .droplet{
+            position: relative;
+            left: 60px;
+            background: #54abfb;
+            height: 100px;
+            width: 100px;
+            border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+            opacity: 0.8;
+            border: 2px solid #3d93ff;
+        }
+        .droplet::before{
+            content: "";
+            position: absolute;
+            background: #318cef;
+            height: 100%;
+            width: 100%;
+            border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+            box-shadow: -10px 15px 8px #1b6ceb, inset -3px 3px 5px #1b6cfb, inset 1px 3px 5px #1a74e5, inset 10px -10px 11px #fff, inset 20px -20px 22px #adceff;
+        }
+        .droplet::after{
+            content: "";
+            position: absolute;
+            background: #e6fdfb;
+            height: 20px;
+            width: 20px;
+            border-radius: 44% 56% 46% 54% / 36% 50% 50% 64%;
+            left: 65px;
+            top: 20px;
+            box-shadow: 8px 20px 0 -5px #fff;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Water droplet</h1>
+    <div class="droplet"></div>
+</body>
+</html>
