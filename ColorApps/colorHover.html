@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color hover</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: inherit;
+        }
+        html{
+            box-sizing: border-box;
+            font-size: 62.5%;
+        }
+        body{
+            min-height: 100vh;
+            font-family: sans-serif;
+        }
+        #container{
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #colors{
+            display: flex;
+            gap: 1rem;
+        }
+        .color{
+            height: 5rem;
+            width: 5rem;
+            border: 4px solid #000;
+            cursor: pointer;
+        }
+        #r{
+            background: #f00;
+        }
+        #g{
+            background: #0f0;
+        }
+        #b{
+            background: #00f;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="colors">
+            <div class="color" id="r"></div>
+            <div class="color" id="g"></div>
+            <div class="color" id="b"></div>
+        </div>
+    </div>
+    <script>
+        // 
+        const bg =  document.getElementById('container');
+        const r = document.getElementById('r');
+        const g = document.getElementById('g');
+        const b = document.getElementById('b');
+        // 
+        r.addEventListener('mouseover', function run(){
+            bg.style.backgroundColor = '#f00';
+        });
+        g.addEventListener('mouseover', function run(){
+            bg.style.backgroundColor = '#0f0';
+        });
+        b.addEventListener('mouseover', function run(){
+            bg.style.backgroundColor = '#00f';
+        });
+    </script>
+</body>
+</html>
