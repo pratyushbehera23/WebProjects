@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refresh Dice</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: inherit;
+        }
+        html{
+            box-sizing: border-box;
+            font-size: 62.5%;
+        }
+        body{
+            font-family: sans-serif;
+        }
+        .container{
+            min-height: 100vh;
+            padding: 2rem;
+            background: #fffffd;
+        }
+        h1{
+            font-size: 3rem;
+            text-align: center;
+            padding: 5rem;
+        }
+        .players{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .player{
+            min-height: 50vh;
+            min-width: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dice{
+            font-size: 10rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="hd">Refresh to play the dice</h1>
+        <div class="players">
+            <div class="player p1">
+                <div class="dice p1dice">6</div>
+            </div>
+            <div class="player p2">
+                <div class="dice p2dice">6</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Heading
+        const heading = document.getElementById("hd");
+        // Players
+        const p1 = document.querySelector(".p1");
+        const p2 = document.querySelector(".p2");
+        const p1dice = document.querySelector(".p1dice");
+        const p2dice = document.querySelector(".p2dice");
+        // Dice roll
+        const d1 = Math.trunc(Math.random() * 6) + 1;
+        const d2 = Math.trunc(Math.random() * 6) + 1;
+        // Show dice
+        p1dice.innerText = d1;
+        p2dice.innerText = d2;
+        // Winner
+        if (d1 === d2) {
+            // console.log("Draw");
+            heading.innerText = "It's a draw!";
+        }else if (d1>d2){
+            // console.log("D1 wins");
+            heading.innerText = "Player 1 wins";
+            p1.style.border = "2px dotted #0f0";
+        } else {
+            // console.log("D2 wins");
+            heading.innerText = "Player 2 wins";
+            p2.style.border = "2px dotted #0f0";
+        }
+    </script>
+</body>
+</html>
