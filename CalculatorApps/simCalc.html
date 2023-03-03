@@ -17,7 +17,11 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            gap: 1rem;
+        }
+        .container{
+            padding: 2rem;
+            box-shadow: 0 0 12px #0000000e;
+            border-radius: 4px;
         }
         input{
             padding: 0.5rem;
@@ -37,17 +41,19 @@
     </style>
 </head>
 <body>
-    <input type="number" name="" id="num1">
-    <select name="" id="symbols">
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
-    </select>
-    <input type="number" name="" id="num2">
-    <button id="btn">=</button>
-    <!-- <input type="number" name="" id="answer"> -->
-    <span id="answer">--</span>
+    <div class="container">
+        <input type="number" name="" id="num1">
+        <select name="" id="symbols">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" name="" id="num2">
+        <button id="btn">=</button>
+        <!-- <input type="number" name="" id="answer"> -->
+        <span id="answer">--</span>
+    </div>
 
     <script>
         const num1 = document.getElementById('num1');

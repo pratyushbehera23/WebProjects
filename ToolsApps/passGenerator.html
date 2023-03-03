@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            margin: 0;
+            font-family: monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-size: 2rem;
+        }
+        h1{
+            font-size: 3rem;
+            color: #333;
+        }
+        .container{
+            padding: 2.4rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 12px #0000000e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            min-width: 24rem;
+            min-height: 24rem;
+        }
+        #passbox{
+            font-family: inherit;
+            box-shadow: 0 0 6px #0000000e;
+            /* height: 3rem; */
+            /* width: 100%; */
+            border-radius: 5px;
+            padding: 1rem 2rem;
+            /*  */
+            border: none;
+            font-size: inherit;
+        }
+        #btn{
+            cursor: pointer;
+            font-size: inherit;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background: #000;
+            transition: all 0.2s;
+        }
+        #btn:hover{
+            transform: translate(1px, -2px);
+            box-shadow: 0 0 12px #00000090;
+        }
+        #btn:active{
+            transform: translate(0px, 0px);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Password Generator</h1>
+    <div class="container">
+        <!-- <div id="passbox" aria-placeholder="hey">jejwlnflnn</div> -->
+        <input type="text" name="" id="passbox" placeholder="generate password..." >
+        <input type="range" name="" id="range" min="10" max="20">
+        <button id="btn">Generate</button>
+    </div>
+
+    <script>
+        const passbox = document.getElementById('passbox');
+        const range = document.getElementById('range');
+        const btn = document.getElementById('btn');
+
+        // const nums = [0,1,2,3,4,5,6,7,8,9];
+        // const lowerc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+        // const upperc = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+        // const symbols = ['~','!','@','#','$','%','^','&','*','_'];
+        // const chars = nums + lowerc + upperc + symbols;
+
+        const chars = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','~','!','@','#','$','%','^','&','*','_'];
+        const charlen = chars.length;
+        
+        btn.addEventListener('click', ()=>{
+            const len = range.value;
+            let pass = '';
+            for (let i=0; i<=len; i++){
+                const ranchar = chars[Math.trunc(Math.random() * charlen)];
+                pass += ranchar;
+            };
+            passbox.value = pass;
+        });
+    </script>
+</body>
+</html>

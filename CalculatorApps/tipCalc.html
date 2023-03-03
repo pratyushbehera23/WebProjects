@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            font-family: sans-serif;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .container{
+            padding: 2rem 4rem;
+            border-radius: 10px;
+            box-shadow: 0 0 12px #0000000e;
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+        input{
+            padding: 1rem;
+        }
+        #btn{
+            cursor: pointer;
+            font-size: inherit;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background: #000;
+            transition: all 0.2s;
+        }
+        #btn:hover{
+            transform: translate(1px, -1px);
+            box-shadow: 0 0 12px #00000090;
+        }
+        #btn:active{
+            transform: translate(0px, 0px);
+            box-shadow: none;
+        }
+        #state{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #ment{
+            color: #555;
+        }
+        #sym{
+            display: none;
+        }
+        #output{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tip Calculator</h1>
+        <input type="number" name="amount" id="amount" placeholder="Total amount" required>
+        <input type="number" name="people" id="people" placeholder="No of person" required>
+        <input type="number" name="tipper" id="tipper" placeholder="Tip percentage" required>
+
+        <button id="btn" type="submit">Calculate</button>
+        <!-- <input type="submit" value="Calculate" id="btn"> -->
+
+        <div id="state">
+            <span id="ment">Each person will pay:</span><span id="sym">$</span><span id="output"></span>
+        </div>
+    </div>
+
+    <script>
+        const output = document.getElementById('output');
+        const sym = document.getElementById('sym');
+        const btn = document.getElementById('btn');
+        // 
+        btn.addEventListener('click', ()=>{
+            const amount = Number(document.getElementById('amount').value);
+            const people = Number(document.getElementById('people').value);
+            const tipper = Number(document.getElementById('tipper').value);
+            // 
+            sym.style.display = "inline";
+            const eachpay = (amount + (amount * tipper/100)) / people;
+            output.innerHTML = eachpay;
+        });
+    </script>
+</body>
+</html>
