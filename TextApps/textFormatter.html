@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Formatter</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-size: 1.6rem;
+        }
+        h1{
+            font-size: 2rem;
+            color: #333;
+        }
+        .container{
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 12px #0000000e;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            position: relative;
+        }
+        #txtarea{
+            padding: 1rem;
+            font-size: inherit;
+        }
+        #txtlen{
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+            background: #0000000c;
+            color: #333;
+            padding: 1rem;
+            border-radius: 50px;
+        }
+        .btn{
+            cursor: pointer;
+            font-size: inherit;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background: #000;
+            transition: all 0.3s;
+        }
+        .btn:hover{
+            transform: translate(0px, -2px);
+            box-shadow: 0 0 12px #00000090;
+        }
+        .btn:active{
+            transform: translate(0px, 0px);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Formatter</h1>
+
+    <!-- Underline-meaningless-words -->
+    <!-- WordCount CharCount LimitNo.ofLetters -->
+    <!-- Clear SelectAll -->
+    <!-- AllLowercase AllUppercase  CapitalizeSentences CapitalizeWords  -->
+    <!-- 
+        Replace____with____  
+        Add____to-Start/End-of-each-line  
+        Trim-First/Last-00-characters-of-each-line 
+    -->
+
+    <div class="container">
+        <textarea name="" id="txtarea" cols="30" rows="10"></textarea>
+        <span id="txtlen"></span>
+        
+        <div class="btngrid">
+            <button class="btn" id="log">Cap</button>
+            <button class="btn" id="lower">LowerCase</button>
+            <button class="btn" id="upper">UpperCase</button>
+        </div>
+    </div>
+
+    <script>
+        const txtarea = document.getElementById("txtarea");
+        const txtlen = document.getElementById("txtlen");
+        const btnLog = document.getElementById('log');
+        const btnLower = document.getElementById('lower');
+        const btnUpper = document.getElementById('upper');
+
+        // TEXT COUNT
+        txtarea.addEventListener('keypress', ()=>{
+            txtlen.innerText = txtarea.value.length + 1;
+        })
+        // txtarea.addEventListener('keypress', ()=>{
+        //     txtlen.innerText = 39;
+        //     if(txtlen.innerText >= 0){
+        //         txtlen.innerText -= txtarea.value.length;
+        //     } else{
+        //         txtarea.disabled = true;
+        //     }
+        // })
+
+        // LOG
+        btnLog.addEventListener('click', ()=>{
+            console.log(txtarea.value);
+        });
+
+        // LOWERCASE
+        btnLower.addEventListener('click', ()=>{
+            txtarea.value = txtarea.value.toLowerCase();
+        });
+
+        // UPPERCASE
+        btnUpper.addEventListener('click', ()=>{
+            txtarea.value = txtarea.value.toUpperCase();
+        });
+    </script>
+</body>
+</html>
