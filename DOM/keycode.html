@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get keycode</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        .keybtn{
+            padding: 0.8rem;
+            margin: 0.5rem;
+            border: 1px solid #111;
+            border-radius: 5px;
+            box-shadow: 0 0 6px #00000017;
+            background: #fff1;
+        }
+        code{
+            font-family: monospace;
+            letter-spacing: 1px;
+            margin: 0.5rem;
+        }
+        body{
+            font-size: 1.6rem;
+            font-family: sans-serif;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #keycode{
+            font-size: 12rem;
+            color: #111;
+        }
+        #info, #key{
+            padding: 0.8rem 1rem;
+            background: #ddd;
+            box-shadow: 0 0 12px #00000017;
+            border-radius: 5px;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <p id="info">Press any <span class="keybtn">key</span> to get it's <code>keyCode</code></p>
+    <div class="box">
+        <h2 id="keycode" class="hide"></h2>
+        <h2 id="key" class="hide"></h2>
+    </div>
+
+    <script>
+        const info = document.getElementById('info');
+        const key = document.getElementById('key');
+        const keycode = document.getElementById('keycode');
+
+        document.addEventListener('keydown', (e) => {
+            info.classList.add('hide');
+            key.classList.remove('hide');
+            keycode.classList.remove('hide');
+
+            key.innerText = e.key;
+            keycode.innerText = e.keyCode;
+            // console.log(e);
+            // console.log(e.keyCode);
+            // console.log(e.which);
+
+            // if (e.key === 'Escape') {
+            //     alert('Escape pressed');
+            // }
+            if (e.keyCode == 9) e.preventDefault();
+            if (e.keyCode == 18) e.preventDefault();
+        });
+
+        document.addEventListener('keypress', (e) => {
+            // info.classList.add('hide');
+            // key.classList.remove('hide');
+            // keycode.classList.remove('hide');
+
+            key.innerText = e.key;
+            keycode.innerText = e.keyCode;
+        });
+    </script>
+</body>
+</html>
+
+<!-- 'keypress' do: code of both upper and lower case ; issue: unable to get keycode of esc, keyname of spacebar ... -->
+<!-- 'keydown' do: key's uppercase's code only ; issue: unable to get keycode of lowercase ... -->
+<!-- ISSUES: unable to get keycode of fn(s) ... -->
+
+
+<!-- From keycode.info -> press any key to get the JS event keycode (ascii) -->
+<!-- Keys:Code A:65 a:97 esc:27 spacebar:32 -->
