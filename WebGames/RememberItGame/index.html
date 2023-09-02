@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remember</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: sans-serif;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            color: #fff;
+        }
+        .boxes{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 400px;
+        }
+        .box{
+            width: 180px;
+            height: 180px;
+            border-radius: 5px;
+            background: #000;
+            cursor: pointer;
+        }
+        .b1{
+            background: #f00;
+        }
+        .b2{
+            background: #0f0;
+        }
+        .b3{
+            background: #ff0;
+        }
+        .b4{
+            background: #00f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Press a key to start</h1>
+        <div class="boxes">
+            <div class="box b1"></div>
+            <div class="box b2"></div>
+            <div class="box b3"></div>
+            <div class="box b4"></div>
+        </div>
+    </div>
+
+    <script>
+        // 
+        const b1 = document.querySelector('.b1');
+        // 
+    </script>
+</body>
+</html>

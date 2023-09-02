@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy txt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-size: 1.6rem;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .wrapper {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        #btn {
+            padding: 0.2rem 1rem;
+        }
+
+        #inp {
+            padding: 1rem;
+            margin: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <p id="para">Hello world 23</p>
+        <button id="btn">Copy</button>
+    </div>
+    <input type="text" placeholder="Paste here.." id="inp">
+
+    <script>
+        const para = document.getElementById('para');
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', () => {
+            navigator.clipboard.writeText(para.textContent);
+        });
+    </script>
+</body>
+
+</html>

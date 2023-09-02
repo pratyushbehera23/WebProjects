@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confetti</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            font-size: 1.6rem;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000;
+        }
+        #confetti{
+            height: 1px;
+            width: 1px;
+        }
+        #btn{
+            padding: 1rem 2rem;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="confetti"></canvas>
+    <button id="btn" role="button">Click!</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const confetti = document.getElementById('confetti');
+        const jsConfetti = new JSConfetti();
+        btn.addEventListener('click', () => {
+            jsConfetti.addConfetti();
+        });
+    </script>
+</body>
+</html>
